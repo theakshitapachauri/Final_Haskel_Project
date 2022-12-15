@@ -1,0 +1,68 @@
+cabal-version:      3.0
+
+name:               TicTacToe
+
+version:            0.1.0.0
+
+license:            NONE
+
+author:             Akshita Pachauri
+
+maintainer:         akshita_pachauri@student.uml.edu
+
+copyright:          (c) 2022 Akshita Pachauri
+category:           Game
+build-type:         Simple
+
+extra-doc-files:    CHANGELOG.md
+
+common warnings
+    ghc-options: -Wincomplete-patterns
+
+library
+    import:           warnings
+
+    exposed-modules:    
+                 HVH
+                 Board
+                 HVC
+                 Tree
+                 Prompt
+
+    other-modules:
+                    Paths_TicTacToe
+
+    -- other-extensions:
+    build-depends:    base >=4.14.3.0 && <4.18,
+                      random >=1.1,
+                      time,
+                      containers,
+                      optparse-generic == 1.4.7,
+                      lens == 4.19.2,
+                      text == 1.2.4.1,
+                      mtl
+
+    hs-source-dirs:   src
+
+    default-language: Haskell2010
+
+executable TicTacToe
+    import:           warnings
+
+    main-is:          Main.hs
+    -- other-modules:
+
+    -- other-extensions:
+    build-depends:
+        base >=4.14.3.0 && <4.18,
+        random >=1.1,
+        time,
+        optparse-generic == 1.4.7,
+        text == 1.2.4.1,
+        containers,
+        mtl,
+        lens == 4.19.2,
+        TicTacToe
+    hs-source-dirs:   app
+
+    default-language: Haskell2010
